@@ -1,7 +1,7 @@
 package list
 
 // Element represents a node in a doubly linked list. It holds
-// a value and references to the previous and next nodes.
+// a value and references the previous and next nodes.
 type Element[V any] struct {
 	prev *Element[V]
 	next *Element[V]
@@ -49,7 +49,7 @@ func (l *List[V]) Front() *Element[V] {
 	return l.front
 }
 
-// Back returns the last element of the linked list
+// Back returns the last element of the linked list.
 func (l *List[V]) Back() *Element[V] {
 	return l.back
 }

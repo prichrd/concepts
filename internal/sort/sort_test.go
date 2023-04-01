@@ -13,6 +13,8 @@ import (
 
 var sortFunctions = []sortFunction[int]{
 	sort.Selection[int],
+	sort.Bubble[int],
+	sort.Insertion[int],
 }
 
 var testCases = []testCase[int]{

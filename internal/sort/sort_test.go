@@ -15,6 +15,7 @@ var sortFunctions = []sortFunction[int]{
 	sort.Selection[int],
 	sort.Bubble[int],
 	sort.Insertion[int],
+	sort.Merge[int],
 }
 
 var testCases = []testCase[int]{
@@ -34,7 +35,7 @@ func TestSort(t *testing.T) {
 	for _, fx := range sortFunctions {
 		t.Run(functionName(fx), func(t *testing.T) {
 			for _, tc := range testCases {
-				for _, asc := range []bool{false, true} {
+				for _, asc := range []bool{true, false} {
 					t.Run(testCaseName(tc.unsorted, asc), func(t *testing.T) {
 						sorted := make([]int, len(tc.unsorted))
 						copy(sorted, tc.unsorted)

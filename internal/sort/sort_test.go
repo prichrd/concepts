@@ -16,6 +16,7 @@ var sortFunctions = []sortFunction[int]{
 	sort.Bubble[int],
 	sort.Insertion[int],
 	sort.Merge[int],
+	sort.Quick[int],
 }
 
 var testCases = []testCase[int]{
@@ -25,10 +26,12 @@ var testCases = []testCase[int]{
 	{[]int{1, 2, 1, 2, 1}},
 	{[]int{5, 5, 5, 1, 1}},
 	{[]int{1, 1, 5, 5, 5}},
+	{[]int{1, 1, 1, 1, 1}},
 	{[]int{}},
 	{[]int{1}},
 	{[]int{1, 2}},
 	{[]int{2, 1}},
+	{[]int{8, 7, 6, 1, 0, 9, 2}},
 }
 
 func TestSort(t *testing.T) {

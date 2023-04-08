@@ -7,7 +7,7 @@ import (
 // Merge sorts a slice of orderable elements by dividing the slice into smaller
 // slices, sorting each slice, and then merging them back together (divide and
 // conquer). The time complexity of the merge sort is O(n log n), as it is always
-// dividing the slices and half for processing. The space complexity is O(n), as
+// dividing the slices in half for processing. The space complexity is O(n), as
 // it is creating a new slice for each merge.
 func Merge[V constraints.Ordered](s []V, asc bool) {
 	copy(s, merge(s, asc))

@@ -34,6 +34,7 @@ var testCases = []testCase[int]{
 	{[]int{2, 1}},
 	{[]int{8, 7, 6, 1, 0, 9, 2}},
 	{[]int{4, 2, 2, 8, 3, 3, 1}},
+	{[]int{121, 432, 564, 23, 1, 45, 788}},
 }
 
 func TestSort(t *testing.T) {

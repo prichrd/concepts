@@ -5,10 +5,14 @@ import (
 )
 
 // Quick sorts a slice of orderable elements by dividing the problem into smaller
-// slices and sorting them recursively (divide and conquer). The time complexity
-// of the quick sort algorithm is O(n log n) in the average case and O(n^2) in the
-// worst case. The space complexity is O(log n) in the average case and O(n) in the
-// worst case.
+// slices and sorting them recursively (divide and conquer). It uses a pivot element
+// to partition the slice into two sub-slices. The elements smaller than the pivot
+// are placed to the left of the pivot and the elements greater than the pivot are
+// placed to the right of the pivot. The pivot element is then placed in its correct
+// position in the sorted slice. The sub-slices are then sorted recursively.
+// The time complexity of the quick sort algorithm is O(n log n) in the average case
+// and O(n^2) in the worst case. The space complexity is O(log n) in the average case
+// and O(n) in the worst case.
 func Quick[V constraints.Ordered](s []V, asc bool) {
 	quickSort(s, 0, len(s)-1, asc)
 }

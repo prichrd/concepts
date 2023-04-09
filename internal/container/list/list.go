@@ -34,12 +34,10 @@ type List[V any] struct {
 
 // NewList returns a configured instance of List.
 func NewList[V any]() *List[V] {
-	return &List[V]{
-		len: 0,
-	}
+	return &List[V]{}
 }
 
-// Len returns the length of the linked list.
+// Len returns the number of elements in the linked list.
 func (l *List[V]) Len() int {
 	return l.len
 }

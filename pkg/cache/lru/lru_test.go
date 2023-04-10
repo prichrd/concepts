@@ -3,7 +3,7 @@ package lru_test
 import (
 	"testing"
 
-	"github.com/prichrd/concepts/internal/cache/lru"
+	"github.com/prichrd/concepts/pkg/cache/lru"
 	"github.com/stretchr/testify/require"
 )
 

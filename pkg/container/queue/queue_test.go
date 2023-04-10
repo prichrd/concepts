@@ -3,7 +3,7 @@ package queue_test
 import (
 	"testing"
 
-	"github.com/prichrd/concepts/internal/container/queue"
+	"github.com/prichrd/concepts/pkg/container/queue"
 	"github.com/stretchr/testify/require"
 )
 

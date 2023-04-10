@@ -7,7 +7,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/prichrd/concepts/internal/sort"
+	"github.com/prichrd/concepts/pkg/sort"
 	"github.com/stretchr/testify/require"
 )
 

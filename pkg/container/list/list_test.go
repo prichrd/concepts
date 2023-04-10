@@ -3,7 +3,7 @@ package list_test
 import (
 	"testing"
 
-	"github.com/prichrd/concepts/internal/container/list"
+	"github.com/prichrd/concepts/pkg/container/list"
 	"github.com/stretchr/testify/require"
 )
 

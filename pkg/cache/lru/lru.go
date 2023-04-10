@@ -3,7 +3,7 @@ package lru
 import (
 	"sync"
 
-	"github.com/prichrd/concepts/internal/container/list"
+	"github.com/prichrd/concepts/pkg/container/list"
 )
 
 // Cache impelements a Least Recent Used (LRU) cache holding a

@@ -3,7 +3,7 @@ package stack_test
 import (
 	"testing"
 
-	"github.com/prichrd/concepts/internal/container/stack"
+	"github.com/prichrd/concepts/pkg/container/stack"
 	"github.com/stretchr/testify/require"
 )
 

@@ -112,7 +112,7 @@ func (l *List[V]) PushFront(v V) *Element[V] {
 	return n
 }
 
-// PushFront inserts an element at the end of the list.
+// PushBack inserts an element at the end of the list.
 func (l *List[V]) PushBack(v V) *Element[V] {
 	n := &Element[V]{
 		val: v,

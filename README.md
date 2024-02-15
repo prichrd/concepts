@@ -6,6 +6,7 @@ This repository serves as a playground for various system design and algorithm c
     - [Doubly Linked List](./pkg/container/list/list.go)
     - [Queue](./pkg/container/queue/queue.go)
     - [Stack](./pkg/container/stack/stack.go)
+    - [Binary Search Tree](./pkg/container/bst/bst.go)
 - Sorting Algorithms
     - [Bubble Sort](./pkg/sort/bubble.go)
     - [Count Sort](./pkg/sort/count.go)

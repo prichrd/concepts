@@ -13,8 +13,8 @@ type Stack[V any] struct {
 	len  int
 }
 
-// NewStack returns a new stack.
-func NewStack[V any]() *Stack[V] {
+// New returns a new stack.
+func New[V any]() *Stack[V] {
 	dummy := &element[V]{}
 	return &Stack[V]{
 		head: dummy,

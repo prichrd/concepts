@@ -8,7 +8,7 @@ import (
 )
 
 func TestStack(t *testing.T) {
-	q := queue.NewQueue[int]()
+	q := queue.New[int]()
 	require.Nil(t, q.Pop())
 	require.Equal(t, 0, q.Len())
 	q.Push(10)

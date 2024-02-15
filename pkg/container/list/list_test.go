@@ -9,7 +9,7 @@ import (
 
 func TestDoublyLinkedList(t *testing.T) {
 	t.Run("push_front_and_back", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushFront(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -18,7 +18,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("remove_front_element", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -27,7 +27,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("remove_mid_element", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -36,7 +36,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("remove_back_element", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -45,7 +45,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("move_front_to_front", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -54,7 +54,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("move_mid_to_front", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -63,7 +63,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("move_back_to_front", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		ll.PushBack(1)
 		ll.PushBack(2)
 		ll.PushBack(3)
@@ -72,7 +72,7 @@ func TestDoublyLinkedList(t *testing.T) {
 	})
 
 	t.Run("empty_list_getters", func(t *testing.T) {
-		ll := list.NewList[int]()
+		ll := list.New[int]()
 		require.Nil(t, ll.Front())
 		require.Nil(t, ll.Back())
 		require.Zero(t, ll.Len())

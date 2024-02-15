@@ -10,19 +10,19 @@ import (
 func TestCache(t *testing.T) {
 	t.Run("puts_and_gets", func(t *testing.T) {
 		c := lru.New[string, int](5)
-		c.Put("a", 1)                    // a
-		c.Put("b", 2)                    // b a
-		c.Put("c", 3)                    // c b a
-		c.Put("d", 4)                    // d c b a
-		c.Put("e", 5)                    // e d c b a
-		require.Equal(t, 1, *c.Get("a")) // a e d c b
-		c.Put("f", 6)                    // f a e d c
-		require.Nil(t, c.Get("b"))
-		require.Equal(t, 1, *c.Get("a"))
-		require.Equal(t, 3, *c.Get("c"))
-		require.Equal(t, 4, *c.Get("d"))
-		require.Equal(t, 5, *c.Get("e"))
-		require.Equal(t, 6, *c.Get("f"))
+		c.Put("a", 1)                       // a
+		c.Put("b", 2)                       // b a
+		c.Put("c", 3)                       // c b a
+		c.Put("d", 4)                       // d c b a
+		c.Put("e", 5)                       // e d c b a
+		expectKeyEquals(t, 1, true, "a", c) // a e d c b
+		c.Put("f", 6)                       // f a e d c
+		expectKeyEquals(t, 0, false, "b", c)
+		expectKeyEquals(t, 1, true, "a", c)
+		expectKeyEquals(t, 3, true, "c", c)
+		expectKeyEquals(t, 4, true, "d", c)
+		expectKeyEquals(t, 5, true, "e", c)
+		expectKeyEquals(t, 6, true, "f", c)
 	})
 
 	t.Run("updates", func(t *testing.T) {
@@ -31,7 +31,16 @@ func TestCache(t *testing.T) {
 		c.Put("b", 2) // b a
 		c.Put("a", 3) // a b
 		c.Put("c", 4) // c a
-		require.Equal(t, 3, *c.Get("a"))
-		require.Equal(t, 4, *c.Get("c"))
+		expectKeyEquals(t, 3, true, "a", c)
+		expectKeyEquals(t, 4, true, "c", c)
 	})
+}
+
+func expectKeyEquals(t *testing.T, exp int, expOk bool, key string, c *lru.Cache[string, int]) {
+	v, ok := c.Get(key)
+	if !expOk {
+		require.False(t, ok)
+		return
+	}
+	require.Equal(t, exp, v)
 }

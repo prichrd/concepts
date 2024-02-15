@@ -32,26 +32,28 @@ func New[K comparable, V any](capacity int) *Cache[K, V] {
 	return &Cache[K, V]{
 		capacity: capacity,
 		m:        make(map[K]*list.Element[*cacheTuple[K, V]]),
-		l:        list.NewList[*cacheTuple[K, V]](),
+		l:        list.New[*cacheTuple[K, V]](),
 	}
 }
 
 // Get returns the cached element for a key. In cases where the
 // element is not present or got evicted from the cache, it returns
-// a nil pointer. Because this is an LRU cache, a node is brought to
-// the top of the list on every cache hit. The last element of the
-// list is the first one to get evicted if a new element gets added.
-func (c *Cache[K, V]) Get(k K) *V {
+// a zero value with a `false` boolean. Because this is an LRU cache,
+// a node is brought to the top of the list on every cache hit. The
+// last element of the list is the first one to get evicted if a
+// new element gets added.
+func (c *Cache[K, V]) Get(k K) (V, bool) {
 	c.mtx.Lock()
 	defer c.mtx.Unlock()
 
 	el, exists := c.m[k]
 	if !exists {
-		return nil
+		var zero V
+		return zero, false
 	}
 
 	c.l.MoveToFront(el)
-	return &el.Val().v
+	return el.Val().v, true
 }
 
 // Put adds an element to the cache under the given key. If the cache

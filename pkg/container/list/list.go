@@ -32,8 +32,8 @@ type List[V any] struct {
 	len   int
 }
 
-// NewList returns a configured instance of List.
-func NewList[V any]() *List[V] {
+// New returns a configured instance of List.
+func New[V any]() *List[V] {
 	return &List[V]{}
 }
 

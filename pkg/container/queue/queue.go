@@ -14,8 +14,8 @@ type Queue[V any] struct {
 	len  int
 }
 
-// NewQueue returns a new queue.
-func NewQueue[V any]() *Queue[V] {
+// New returns a new queue.
+func New[V any]() *Queue[V] {
 	dummy := &element[V]{}
 	return &Queue[V]{
 		head: dummy,

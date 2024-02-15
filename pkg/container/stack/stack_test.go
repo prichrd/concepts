@@ -8,7 +8,7 @@ import (
 )
 
 func TestStack(t *testing.T) {
-	s := stack.NewStack[int]()
+	s := stack.New[int]()
 	require.Nil(t, s.Pop())
 	require.Equal(t, 0, s.Len())
 	s.Push(10)

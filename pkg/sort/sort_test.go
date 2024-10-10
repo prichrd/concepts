@@ -39,13 +39,15 @@ var testCases = []testCase[int]{
 
 func TestSort(t *testing.T) {
 	for _, fx := range sortFunctions {
+		sort := fx
 		t.Run(functionName(fx), func(t *testing.T) {
 			for _, tc := range testCases {
 				for _, asc := range []bool{true, false} {
 					t.Run(testCaseName(tc.unsorted, asc), func(t *testing.T) {
+						t.Parallel()
 						sorted := make([]int, len(tc.unsorted))
 						copy(sorted, tc.unsorted)
-						fx(sorted, asc)
+						sort(sorted, asc)
 						require.ElementsMatch(t, sorted, tc.unsorted)
 						assertOrdered(t, sorted, asc)
 					})
